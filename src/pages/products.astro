@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { ProductsInfo, ProductsSite } from "../config/sitio";
+---
+
+<Layout title={ProductsInfo.title} description={ProductsInfo.description}>
+  <div class="container mx-auto px-4 py-24">
+    <h1 class="text-3xl font-bold mb-8 text-center">Nuestros Productos</h1>
+    {
+      ProductsSite.map((category) => (
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-4">{category.name}</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+            {category.items.map((product) => (
+              <div class="rounded-lg shadow-lg overflow-hidden">
+                <img
+                  class="w-full h-64 object-cover"
+                  src={product.img}
+                  alt={product.label}
+                />
+                <div class="p-4">
+                  <h3 class="text-lg font-bold mb-2">{product.label}</h3>
+                  <p class="text-sm mb-4">{product.description}</p>
+                 <!-- <div class="flex justify-between items-center">
+                    <span class="text-sm font-semibold">Ver más</span>
+                    <a
+                      href={product.href}
+                      class="text-blue-500 hover:underline"
+                    >
+                      Detalles
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

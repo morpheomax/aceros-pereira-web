@@ -1,0 +1,47 @@
+---
+const carouselData = [
+  {
+    image: "/images/products/laminas-cortadas-aceros-pereira.webp",
+    title: "Corte Gratis",
+    description: "Compra tu plancha y el corte es gratis",
+  },
+  {
+    image: "/images/products/planchas-acero-aceros-pereira.webp",
+    title: "Planchas de acero",
+    description: "Variedad de planchas de acero para múltiples usos.",
+  },
+  {
+    image: "/images/products/tubos_apilados_aceros_pereira.webp",
+    title: "Perfiles de Acero",
+    description: "Perfiles cuadrados, rectangulares y abiertos.",
+  },
+];
+---
+
+<div id="indicators-carousel" class="relative w-full" data-carousel="static" data-carousel-item-count={carouselData.length}>
+    {carouselData.map((link, index) => (
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96" >
+        <div class="hidden duration-700 ease-in-out" data-carousel-item={(index === 0) ? 'active' : ''}>
+          <img
+            src={link.image}
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt={link.title}
+          />
+        </div>
+    
+  </div>
+  <!-- Slider indicators -->
+  <div
+    class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2"
+  >
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="true"
+      aria-label={link.image}
+      data-carousel-slide-to="0"></button>
+    
+  </div>
+  
+  ))}
+</div>

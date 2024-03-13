@@ -1,0 +1,147 @@
+---
+import { BASE_URL } from "../config/bd.js";
+---
+
+<section
+  class="w-full bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 shadow"
+>
+  <h2 class="text-4xl text-center mb-12">Solicita tu Cotización</h2>
+  <form
+    action={BASE_URL}
+    method="post"
+    class="bg-gray-50 md:mx-10 mx-auto px-4"
+  >
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+      <div>
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-900"
+          >Nombre</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label
+          for="lastname"
+          class="block mb-2 text-sm font-medium text-gray-900">Apellido</label
+        >
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Apellido"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label
+          for="company"
+          class="block mb-2 text-sm font-medium text-gray-900">Empresa</label
+        >
+        <input
+          type="text"
+          id="company"
+          name="company"
+          placeholder="Razón Social"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="rut" class="block mb-2 text-sm font-medium text-gray-900"
+          >Rut</label
+        >
+        <input
+          type="text"
+          id="rut"
+          name="rut"
+          placeholder="12345678-7"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
+          >Teléfono</label
+        >
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="923456789"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email@email.com"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+
+      <!-- campos productos -->
+      <div>
+        <label
+          for="request"
+          class="block mb-2 text-sm font-medium text-gray-900">Producto</label
+        >
+        <input
+          type="text"
+          id="request"
+          name="products[0].request"
+          placeholder="Plancha de acero"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label
+          for="quantity"
+          class="block mb-2 text-sm font-medium text-gray-900">Cantidad</label
+        >
+        <input
+          type="number"
+          id="quantity"
+          name="products[0].quantity"
+          required
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+
+      <div class="mb-6">
+        <label for="obs" class="block mb-2 text-sm font-medium text-gray-900"
+          >Comentario</label
+        >
+        <textarea
+          id="obs"
+          name="products[0].obs"
+          placeholder="Ingresa tu comentario"
+          required
+          rows="4"
+          cols="1"
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >Submit</button
+      >
+    </div>
+  </form>
+</section>

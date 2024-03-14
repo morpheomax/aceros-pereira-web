@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ProductsInfo, ProductsSite } from "../config/sitio";
+import {ImagemageIcon} from "../util/icons"
 ---
 
 <Layout title={ProductsInfo.title} description={ProductsInfo.description}>
@@ -13,11 +14,12 @@ import { ProductsInfo, ProductsSite } from "../config/sitio";
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
             {category.items.map((product) => (
               <div class="rounded-lg shadow-lg overflow-hidden">
-                <img
+           <!--    <img
                   class="w-full h-64 object-cover"
-                  src={product.img}
+                  src={product.imagen}
                   alt={product.label}
-                />
+                /> --> 
+                <ImagemageIcon class="w-full h-64 object-cover" />
                 <div class="p-4">
                   <h3 class="text-lg font-bold mb-2">{product.label}</h3>
                   <p class="text-sm mb-4">{product.description}</p>

@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Map from "../components/Map.astro";
+import { ContactSite } from "../config/sitio";
+---
+
+<Layout
+  title="Contacto"
+  description="Página de contacto para comunicarte con nosotros."
+>
+  <main class="flex flex-col md:flex-row mx-6 my-6">
+    <div class="flex flex-col md:w-1/2 md:pr-8">
+      <h2
+        class="mb-6 text-3xl font-semibold text-gray-900 uppercase text-center dark:text-white"
+      >
+        Contáctanos
+      </h2>
+      {
+        ContactSite.map((link, index) => (
+          <div class="mb-4 max-w-md md:max-w-full">
+            <div class="flex items-center p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              {/* Incluye aquí el icono */}
+              <div>
+                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Dirección
+                </h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">
+                  {link.address}, {link.comune}, {link.city}
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center p-6 mt-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              {/* Incluye aquí el icono */}
+              <div>
+                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Email
+                </h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">
+                  {link.email}
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center p-6 mt-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              {/* Incluye aquí el icono */}
+              <div>
+                <a
+                  href="https://api.whatsapp.com/send?phone=56934274898"
+                  target="_blank"
+                >
+                  <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Teléfono
+                  </h5>
+                  <p class="font-normal text-gray-700 dark:text-gray-400">
+                    {link.phone1}
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <section class="w-full md:w-1/2 mt-8 md:mt-0">
+      <Map />
+    </section>
+  </main>
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import { NavItems, InfoSite, ProductsSite, Contact } from "../config/sitio";
+import { NavItems, InfoSite, ProductsSite, ContactSite } from "../config/sitio";
 ---
 
 <footer class="bg-yellow-300 dark:bg-gray-900">
@@ -53,7 +53,7 @@ import { NavItems, InfoSite, ProductsSite, Contact } from "../config/sitio";
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                   Contacto
                 </h2>
-                {Contact.map((link) => (
+                {ContactSite.map((link) => (
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
                     <li class="mb-4">
                       <p class="hover:underline">{link.address}</p>

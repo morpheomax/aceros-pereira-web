@@ -202,7 +202,7 @@ export const ServicesSite = [
   },
 ];
 
-export const Contact =[
+export const ContactSite =[
   {
     
       address:'Miguel León Prado 854',

@@ -1,53 +1,22 @@
 ---
 // import ThemeToggle from "./ThemeToggle.astro";
 
-const navItems = [
-  {
-    title: "Inicio",
-    label: "home",
-    url: "/",
-  },
-  {
-    title: "Nosotros",
-    label: "nosotros",
-    url: "/#nosotros",
-  },
-  {
-    title: "Servicios",
-    label: "servicios",
-    url: "/#servicios",
-  },
-  {
-    title: "Productos",
-    label: "productos",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:ventas@acerospereira.cl",
-  },
-];
+import { NavItems, InfoSite } from "../config/sitio";
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mt-2">
   <nav
     class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
-    <img
-      src="https://www.svgrepo.com/show/63321/avatar.svg"
-      class="size-12 mb-4"
-    />
+    <img src={InfoSite[0].path_alternative} class="w-36 my-1" />
     {
-      navItems.map((link) => (
+      NavItems.map((link) => (
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
           aria-label={link.label}
-          href={link.url}
+          href={link.href}
         >
-          {link.title}
+          {link.label}
         </a>
       ))
     }
